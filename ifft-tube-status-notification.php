@@ -1,3 +1,5 @@
+#!/usr/bin/php
+
 <?php
 
 $lines = ["central", "jubilee", "london-overground"];
