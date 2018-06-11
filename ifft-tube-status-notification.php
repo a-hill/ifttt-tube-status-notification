@@ -2,6 +2,14 @@
 
 <?php
 
+$key_input = file_get_contents('php://input');
+$key_ini = parse_ini_file('key.ini');
+$key = $key_ini['key'];
+if($key !== $key_input) {
+    http_response_code(404);
+    die();
+}
+
 $lines = ["central", "jubilee", "london-overground"];
 
 $lines_argument = array_reduce($lines, function ($carry, $item) {
