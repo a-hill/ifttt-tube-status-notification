@@ -1,12 +1,11 @@
 #!/usr/bin/php
-
 <?php
 
 $key_input = file_get_contents('php://input');
 $key_ini = parse_ini_file('key.ini');
 $key = $key_ini['key'];
 if($key !== $key_input) {
-    http_response_code(404);
+    http_response_code(403);
     die();
 }
 
